@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Le Comptoir Bressan · exemple de site Atelier Calibre</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:wght@500;700;800&family=Work+Sans:wght@400;500;600&family=Caveat:wght@600&display=swap">
+<style>
+:root{
+  --bg:#F6F2EC; --surface:#FFFFFF; --ink:#2B1D12; --muted:#76604E; --line:#E4D8CA;
+  --brand:#A0521C; --brand-ink:#FFFFFF; --slate:#263029; --chalk:#F4F1E8; --star:#C98A00;
+  --display:"Bitter",Georgia,serif; --body:"Work Sans",system-ui,sans-serif; --hand:"Caveat","Comic Sans MS",cursive;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#17110C;--surface:#211810;--ink:#F2E8DD;--muted:#B9A28E;--line:#3A2B1E;--brand:#E58A4A;--brand-ink:#17110C;--slate:#1E2621;--chalk:#ECE7DA;--star:#F0B83A;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-bottom:84px}
+.in{max-width:780px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--display);line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.demo{background:var(--ink);color:var(--bg);font-size:.8rem;text-align:center;padding:6px}
+.demo a{color:inherit;font-weight:600}
+.hero{background:linear-gradient(160deg,#A0521C,#5A2A0B);color:#fff}
+.hero .in{padding-block:40px;display:flex;flex-direction:column;gap:12px}
+.hero small{font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.75rem;opacity:.85}
+.hero h1{font-size:clamp(2.6rem,11vw,4.4rem);font-weight:800}
+.hero p{font-size:1.1rem;opacity:.92;max-width:48ch}
+.rate span{color:#FFD24A;letter-spacing:2px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.b{display:inline-flex;padding:14px 18px;border-radius:6px;font-weight:600;text-decoration:none}
+.b.w{background:#fff;color:#5A2A0B}.b.o{border:2px solid rgba(255,255,255,.7);color:#fff}
+.b:focus-visible{outline:3px solid var(--star);outline-offset:2px}
+section{padding-block:40px}
+h2{font-size:clamp(1.8rem,7vw,2.4rem);font-weight:700;margin-bottom:18px}
+.slate{background:var(--slate);color:var(--chalk);border-radius:10px;padding:22px 20px;border:6px solid #6B4A2E;display:flex;flex-direction:column;gap:10px}
+.slate h2{font-family:var(--hand);font-weight:600;font-size:2.4rem;color:var(--chalk);margin:0}
+.slate .l{font-family:var(--hand);font-size:1.5rem;line-height:1.2}
+.slate .pr{font-family:var(--hand);font-size:2rem;color:#F2C46B}
+.carte{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:20px}
+.carte h3{font-family:var(--display);font-size:1.2rem;margin:0 0 8px;color:var(--brand)}
+.it{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid var(--line)}
+.it b{font-variant-numeric:tabular-nums;white-space:nowrap}
+.it small{display:block;color:var(--muted)}
+.rv{display:grid;gap:10px}
+.rv blockquote{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px}
+.rv .s{color:var(--star);letter-spacing:2px}
+.rv cite{display:block;color:var(--muted);font-style:normal;font-size:.85rem;margin-top:4px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td{padding:8px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right}
+a.map{color:var(--brand);font-weight:600}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.85rem}
+footer a{color:var(--brand)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;z-index:5}
+.bar a{flex:1;text-align:center;padding:13px;border-radius:6px;font-weight:600;text-decoration:none}
+.bar .c{background:var(--brand);color:var(--brand-ink)}.bar .m{border:1.5px solid var(--line);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="demo">Exemple de site réalisé par <a href="/">Atelier Calibre</a> · restaurant fictif · les boutons de contact vous mènent à Atelier Calibre</div>
+<header class="hero"><div class="in">
+  <small>Bistrot · Cuisine maison · Bourg-en-Bresse</small>
+  <h1>Le Comptoir Bressan</h1>
+  <p>Produits de la Bresse, cuisinés chaque matin. Menu du jour à 16 €, terrasse aux beaux jours.</p>
+  <p class="rate"><span>★★★★☆</span> Ici, votre note Google</p>
+  <div class="btns"><a class="b w" href="https://wa.me/33698711848?text=Bonjour%2C%20j%27ai%20vu%20l%27exemple%20Le%20Comptoir%20Bressan%2C%20je%20voudrais%20le%20m%C3%AAme%20site" target="_blank" rel="noopener">Je veux ce site</a><a class="b o" href="#carte">Voir la carte</a></div>
+</div></header>
+<main>
+<section><div class="in">
+  <div class="slate">
+    <h2>Menu du jour</h2>
+    <p class="l">Velouté de potimarron</p>
+    <p class="l">Poulet de Bresse à la crème, gratin</p>
+    <p class="l">Tarte aux pralines</p>
+    <p class="pr">Entrée + plat + dessert : 16 €</p>
+  </div>
+</div></section>
+<section id="carte"><div class="in">
+  <h2>La carte</h2>
+  <div class="carte">
+    <div><h3>Plats</h3>
+      <div class="it"><span>Poulet de Bresse à la crème<small>Riz pilaf ou gratin</small></span><b>21 €</b></div>
+      <div class="it"><span>Quenelle de brochet<small>Sauce Nantua</small></span><b>18 €</b></div>
+      <div class="it"><span>Burger du Comptoir<small>Comté, frites maison</small></span><b>16 €</b></div></div>
+    <div><h3>Desserts</h3>
+      <div class="it"><span>Tarte aux pralines</span><b>7 €</b></div>
+      <div class="it"><span>Galette bressane</span><b>6 €</b></div>
+      <div class="it"><span>Café gourmand</span><b>8 €</b></div></div>
+  </div>
+</div></section>
+<section><div class="in">
+  <h2>Avis</h2>
+  <div class="rv">
+    <blockquote><span class="s">★★★★★</span><p>Le poulet à la crème comme chez ma grand-mère. Service rapide le midi.</p><cite>Avis de démonstration</cite></blockquote>
+    <blockquote><span class="s">★★★★☆</span><p>Très bon rapport qualité-prix, pensez à réserver le vendredi.</p><cite>Avis de démonstration</cite></blockquote>
+  </div>
+</div></section>
+<section><div class="in info">
+  <div><h2>Horaires</h2>
+    <table><tr><td>Lundi au vendredi</td><td>12 h – 14 h · 19 h – 22 h</td></tr><tr><td>Samedi</td><td>19 h – 22 h 30</td></tr><tr><td>Dimanche</td><td>Fermé</td></tr></table></div>
+  <div><h2>Nous trouver</h2>
+    <p>Centre-ville, à 5 minutes à pied de la cathédrale.</p>
+    <p style="margin-top:12px"><a class="map" href="https://www.google.com/maps/search/Bourg-en-Bresse" target="_blank" rel="noopener">Itinéraire dans Google Maps →</a></p></div>
+</div></section>
+</main>
+<footer><div class="in">Le Comptoir Bressan · restaurant fictif · Site réalisé par <a href="/">Atelier Calibre</a></div></footer>
+<nav class="bar" aria-label="Contact rapide"><a class="c" href="https://wa.me/33698711848?text=Bonjour%2C%20j%27ai%20vu%20l%27exemple%20Le%20Comptoir%20Bressan%2C%20je%20voudrais%20le%20m%C3%AAme%20site" target="_blank" rel="noopener">Je veux ce site</a><a class="m" href="/">Voir le tarif</a></nav>
+</body>
+</html>

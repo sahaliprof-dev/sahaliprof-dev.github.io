@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Atelier Calibre · Sites internet pour artisans et commerçants</title>
+<meta name="description" content="Un site vitrine clair, pensé pour le téléphone, en ligne en 72 heures. Maquette gratuite avant de payer. 290 € pour les 3 premiers clients.">
+<meta property="og:title" content="Atelier Calibre · Votre site vitrine en 72 h">
+<meta property="og:description" content="Maquette gratuite, prix fixe, sans abonnement obligatoire.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 6h22v5H14v15H9V11H4z' fill='%231F4E8C'/%3E%3Cpath d='M14 16h8v4h-8z' fill='%23F2B705'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,500..800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{
+  --bg:#F4F5F2; --surface:#FFFFFF; --ink:#18202B; --muted:#5A6472; --line:#D9DDD6;
+  --accent:#1F4E8C; --accent-ink:#FFFFFF; --mark:#F2B705; --ok:#1E7A4C;
+  --display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12171E; --surface:#1A212B; --ink:#E9ECEF; --muted:#9AA4B1; --line:#2C3542;
+  --accent:#6E9FE0; --accent-ink:#0E1620; --mark:#F2C230; --ok:#4CC08A; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 48px;display:flex;flex-direction:column;gap:56px}
+h1,h2,h3{font-family:var(--display);font-stretch:80%;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.4rem,9vw,4rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:clamp(1.6rem,5.5vw,2.2rem);font-weight:750}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0;max-width:62ch}
+a{color:var(--accent)}
+.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-stretch:80%;font-weight:800;font-size:1.15rem}
+.brand svg{width:28px;height:28px;flex:none}
+.ruler{height:14px;background:
+  repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 10px) bottom/100% 6px no-repeat,
+  repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 50px) bottom/100% 14px no-repeat;opacity:.35}
+.hero{display:flex;flex-direction:column;gap:20px}
+.hero h1 mark{background:linear-gradient(transparent 62%,var(--mark) 62% 92%,transparent 92%);color:inherit;padding:0 .05em}
+.lead{font-size:1.1rem;color:var(--muted)}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:var(--accent-ink);text-decoration:none;
+  padding:14px 20px;border-radius:6px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:focus-visible,.copy:focus-visible,summary:focus-visible,.phone:focus-visible{outline:3px solid var(--mark);outline-offset:2px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--line)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 20px;font-family:var(--mono);font-size:.85rem;color:var(--muted)}
+.facts span::before{content:"▸ ";color:var(--accent)}
+.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px;margin-top:20px;padding:0;list-style:none}
+.list li{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px;display:flex;gap:10px;min-width:0}
+.list li b{display:block}
+.list li small{color:var(--muted);font-size:.9rem}
+.tick{color:var(--ok);font-weight:700;flex:none}
+.steps{list-style:none;padding:0;margin:20px 0 0;display:flex;flex-direction:column;gap:18px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;counter-increment:s}
+.steps li::before{content:counter(s);font-family:var(--display);font-stretch:80%;font-weight:800;font-size:1.6rem;
+  width:44px;height:44px;display:grid;place-items:center;border:2px solid var(--accent);color:var(--accent);border-radius:50%}
+.steps p{color:var(--muted)}
+.devis{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-top:20px;overflow:hidden}
+.devis header{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:16px 18px;border-bottom:1px dashed var(--line)}
+.devis table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.devis td{padding:12px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+.devis td:last-child{text-align:right;white-space:nowrap;font-family:var(--mono)}
+.devis td small{display:block;color:var(--muted);font-size:.85rem}
+.strike{text-decoration:line-through;color:var(--muted);margin-right:6px}
+.price-big{font-family:var(--display);font-stretch:80%;font-weight:800;font-size:1.6rem;color:var(--accent)}
+.badge{display:inline-block;background:var(--mark);color:#18202B;font-family:var(--mono);font-size:.7rem;padding:2px 7px;border-radius:3px;letter-spacing:.04em;text-transform:uppercase;margin-left:6px;vertical-align:middle}
+.devis footer{padding:14px 18px;color:var(--muted);font-size:.9rem}
+.demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr));gap:14px;margin-top:20px}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px;display:flex;flex-direction:column;gap:8px;text-decoration:none;color:inherit}
+.screen{border-radius:8px;overflow:hidden;aspect-ratio:9/13;max-width:100%;display:flex;flex-direction:column;font-size:.72rem;line-height:1.3}
+.screen .top{padding:16px 12px;color:#fff;display:flex;flex-direction:column;gap:6px;flex:1;justify-content:flex-end}
+.screen .top strong{font-family:var(--display);font-stretch:80%;font-size:1.15rem;line-height:1.05}
+.screen .stars{color:#FFD24A;letter-spacing:1px}
+.screen .bot{background:#fff;color:#18202B;padding:10px 12px;display:flex;flex-direction:column;gap:6px}
+.screen .pill{background:#18202B;color:#fff;border-radius:999px;padding:6px 10px;text-align:center;font-weight:600}
+.s1 .top{background:linear-gradient(160deg,#0F5E8C,#0A3B57)}
+.s2 .top{background:linear-gradient(160deg,#8C3B5E,#4F1F35)}
+.s3 .top{background:linear-gradient(160deg,#A0521C,#5A2A0B)}
+.cap{font-size:.85rem;color:var(--muted);padding:0 4px 4px}
+.cap b{color:var(--ink)}
+.cap .go{display:block;margin-top:4px;color:var(--accent);font-weight:600}
+.note{font-size:.85rem;color:var(--muted);margin-top:10px}
+details{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:0 16px}
+details+details{margin-top:8px}
+summary{cursor:pointer;font-weight:600;padding:14px 0}
+details p{padding-bottom:14px;color:var(--muted)}
+.faq{margin-top:20px}
+.contact{background:var(--accent);color:var(--accent-ink);border-radius:10px;padding:24px 20px;display:flex;flex-direction:column;gap:14px}
+.contact h2{color:var(--accent-ink)}
+.contact .btn{background:var(--accent-ink);color:var(--accent)}
+.num{font-family:var(--mono);font-size:1.3rem;user-select:all}
+.copy{background:transparent;border:1.5px solid currentColor;color:inherit;font:inherit;padding:8px 12px;border-radius:6px;cursor:pointer}
+.legal{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:flex;flex-direction:column;gap:4px}
+@media (prefers-reduced-motion:no-preference){.btn,.phone{transition:transform .15s}.btn:hover,.phone:hover{transform:translateY(-2px)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero" aria-labelledby="t">
+    <div class="brand">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 6h22v5H14v15H9V11H4z" fill="var(--accent)"/><path d="M14 16h8v4h-8z" fill="var(--mark)"/></svg>
+      Atelier Calibre
+    </div>
+    <div class="ruler" aria-hidden="true"></div>
+    <p class="label">Sites internet pour artisans et commerçants</p>
+    <h1 id="t">Vos clients vous cherchent sur Google. <mark>Donnez-leur un site.</mark></h1>
+    <p class="lead">Un site vitrine clair, pensé pour le téléphone, en ligne en 72 heures. Et avant de payer quoi que ce soit, vous voyez votre maquette gratuitement.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/33698711848?text=Bonjour%2C%20je%20voudrais%20ma%20maquette%20gratuite" target="_blank" rel="noopener">Recevoir ma maquette gratuite</a>
+      <a class="btn ghost" href="#exemples">Voir des exemples</a>
+    </div>
+    <div class="facts"><span>290 € pour les 3 premiers clients</span><span>En ligne en 72 h</span><span>Sans abonnement obligatoire</span></div>
+  </section>
+
+  <section aria-labelledby="c">
+    <p class="label">Ce que contient votre site</p>
+    <h2 id="c">Tout ce qu'un client veut savoir avant de vous appeler</h2>
+    <ul class="list">
+      <li><span class="tick">✓</span><div><b>Vos services et vos prix</b><small>Ce que vous faites, où vous intervenez</small></div></li>
+      <li><span class="tick">✓</span><div><b>Vos photos de chantiers</b><small>Ou de votre boutique, de vos plats</small></div></li>
+      <li><span class="tick">✓</span><div><b>Vos avis Google</b><small>Mis en avant dès l'ouverture</small></div></li>
+      <li><span class="tick">✓</span><div><b>Horaires et plan d'accès</b><small>Avec lien vers l'itinéraire</small></div></li>
+      <li><span class="tick">✓</span><div><b>Bouton Appeler et WhatsApp</b><small>Un contact en un seul geste</small></div></li>
+      <li><span class="tick">✓</span><div><b>Lisible sur téléphone</b><small>Là où vos clients vous cherchent</small></div></li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="m">
+    <p class="label">Comment ça se passe</p>
+    <h2 id="m">Vous voyez votre site avant de dire oui</h2>
+    <ol class="steps">
+      <li><div><h3>Je prépare votre maquette, gratuitement</h3><p>À partir de vos informations publiques : nom, services, avis, horaires.</p></div></li>
+      <li><div><h3>Vous validez ou vous corrigez</h3><p>Couleurs, textes, photos : on ajuste jusqu'à ce qu'elle vous ressemble. Si elle ne vous plaît pas, vous ne devez rien.</p></div></li>
+      <li><div><h3>Votre site est en ligne en 72 h</h3><p>Acompte de 50 % à la commande, le solde à la livraison, une fois que vous avez vu le résultat en ligne.</p></div></li>
+    </ol>
+  </section>
+
+  <section id="tarif" aria-labelledby="p">
+    <p class="label">Tarif</p>
+    <h2 id="p">Un prix fixe, écrit noir sur blanc</h2>
+    <div class="devis">
+      <header><span class="label">Devis type · site vitrine</span><span class="label">Prix TTC</span></header>
+      <table>
+        <tr><td><b>Site vitrine une page</b> <span class="badge">Lancement</span><small>Services, photos, avis, horaires, carte, boutons d'appel. Prix réservé aux 3 premiers clients.</small></td>
+            <td><span class="strike">390 €</span><span class="price-big">290 €</span></td></tr>
+        <tr><td><b>Hébergement</b><small>Inclus, sans frais mensuels</small></td><td>0 €</td></tr>
+        <tr><td><b>Nom de domaine</b> (option)<small>Votre adresse, par exemple plomberie-martin.fr, à votre nom</small></td><td>≈ 10 €/an</td></tr>
+        <tr><td><b>Mises à jour</b> (option)<small>Nouvelles photos, horaires, promotions, à la demande</small></td><td>15 €/mois</td></tr>
+      </table>
+      <footer>Paiement sécurisé par carte : 50 % à la commande, 50 % à la livraison. Maquette gratuite et sans engagement.</footer>
+    </div>
+  </section>
+
+  <section id="exemples" aria-labelledby="e">
+    <p class="label">Exemples</p>
+    <h2 id="e">À quoi ressemblera votre site sur téléphone</h2>
+    <div class="demos">
+      <a class="phone" href="/demos/plombier/">
+        <div class="screen s1" aria-hidden="true">
+          <div class="top"><span class="stars">★★★★★</span><strong>Plomberie Dubois</strong><span>Dépannage 7j/7 · Bourg-en-Bresse et alentours</span></div>
+          <div class="bot"><span>Fuite, chauffe-eau, débouchage</span><span class="pill">Appeler maintenant</span></div>
+        </div>
+        <span class="cap"><b>Plombier</b> <span class="badge">Modèle phare</span> · urgence, tarifs et zone d'intervention en premier<span class="go">Ouvrir l'exemple →</span></span>
+      </a>
+      <a class="phone" href="/demos/coiffure/">
+        <div class="screen s2" aria-hidden="true">
+          <div class="top"><span class="stars">★★★★★</span><strong>Salon Lina</strong><span>Coupe, couleur, soins · Mardi au samedi</span></div>
+          <div class="bot"><span>Femme 35 € · Homme 20 €</span><span class="pill">Réserver sur WhatsApp</span></div>
+        </div>
+        <span class="cap"><b>Coiffeur</b> · prix et réservation en un geste<span class="go">Ouvrir l'exemple →</span></span>
+      </a>
+      <a class="phone" href="/demos/restaurant/">
+        <div class="screen s3" aria-hidden="true">
+          <div class="top"><span class="stars">★★★★☆</span><strong>Le Comptoir Bressan</strong><span>Cuisine maison · Menu du jour 16 €</span></div>
+          <div class="bot"><span>Ouvert midi et soir</span><span class="pill">Voir le menu</span></div>
+        </div>
+        <span class="cap"><b>Restaurant</b> · menu du jour et horaires visibles<span class="go">Ouvrir l'exemple →</span></span>
+      </a>
+    </div>
+    <p class="note">Exemples de démonstration : entreprises fictives. Autre réalisation : <a href="https://www.maintenanceiq.fr/" target="_blank" rel="noopener">maintenanceiq.fr</a>.</p>
+  </section>
+
+  <section aria-labelledby="f">
+    <p class="label">Questions fréquentes</p>
+    <h2 id="f">Ce qu'on me demande souvent</h2>
+    <div class="faq">
+      <details><summary>J'ai déjà une page Facebook, à quoi sert un site ?</summary><p>Facebook parle à ceux qui vous suivent déjà. Le site vous fait trouver sur Google par ceux qui ne vous connaissent pas encore.</p></details>
+      <details><summary>Je n'y connais rien, je dois faire quelque chose ?</summary><p>Non. Vous envoyez quelques photos et vous relisez la maquette. Je m'occupe du reste, y compris de la mise en ligne.</p></details>
+      <details><summary>Y a-t-il un abonnement obligatoire ?</summary><p>Non. L'hébergement est inclus. Les mises à jour à 15 €/mois sont une option, que vous pouvez arrêter quand vous voulez.</p></details>
+      <details><summary>Est-ce que vous garantissez la première place sur Google ?</summary><p>Personne ne peut garantir une place. Le site est construit pour être bien compris par Google : vos services, votre ville, vos horaires.</p></details>
+      <details><summary>Et si je change d'avis après la maquette ?</summary><p>Vous ne payez rien. La maquette est gratuite et sans engagement.</p></details>
+    </div>
+  </section>
+
+  <section class="contact" aria-labelledby="k">
+    <h2 id="k">Demandez votre maquette gratuite</h2>
+    <p>Envoyez le nom de votre entreprise et votre ville sur WhatsApp. Je vous réponds avec votre maquette.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://wa.me/33698711848?text=Bonjour%2C%20je%20voudrais%20ma%20maquette%20gratuite" target="_blank" rel="noopener">Écrire sur WhatsApp</a>
+    </div>
+    <div class="cta-row"><span class="num" id="num">06 98 71 18 48</span><button class="copy" id="copy" type="button">Copier le numéro</button></div>
+  </section>
+
+  <footer class="legal">
+    <span>Atelier Calibre · Sahali, entrepreneur individuel · Bourg-en-Bresse</span>
+    <span>SIRET en cours d'attribution · TVA non applicable, art. 293 B du CGI</span>
+  </footer>
+</div>
+<script>
+document.getElementById('copy').addEventListener('click',function(){
+  var b=this,t='0698711848';
+  function done(){b.textContent='Numéro copié';setTimeout(function(){b.textContent='Copier le numéro'},2000)}
+  function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('num'));var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='Numéro sélectionné'}
+  try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}
+});
+</script>
+</body>
+</html>

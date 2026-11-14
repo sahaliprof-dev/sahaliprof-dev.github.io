@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Salon Lina · exemple de site Atelier Calibre</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{
+  --bg:#FBF7F8; --surface:#FFFFFF; --ink:#2A1720; --muted:#7A6670; --line:#EBDDE2;
+  --brand:#8C3B5E; --brand-ink:#FFFFFF; --soft:#F3E4EA; --star:#C98A00;
+  --display:"Fraunces",Georgia,serif; --body:"DM Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#1A1015;--surface:#24161D;--ink:#F4E9EE;--muted:#B49CA8;--line:#3A2630;--brand:#E08AB0;--brand-ink:#1A1015;--soft:#2E1C25;--star:#F0B83A;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;padding-bottom:84px}
+.in{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2{font-family:var(--display);font-weight:700;line-height:1.05;margin:0;text-wrap:balance}
+p{margin:0}
+.demo{background:var(--ink);color:var(--bg);font-size:.8rem;text-align:center;padding:6px}
+.demo a{color:inherit;font-weight:700}
+.hero .in{padding-block:44px 36px;display:flex;flex-direction:column;gap:14px}
+.hero small{letter-spacing:.14em;text-transform:uppercase;color:var(--brand);font-weight:700;font-size:.75rem}
+.hero h1{font-size:clamp(3rem,13vw,5rem)}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--brand)}
+.hero p{color:var(--muted);font-size:1.1rem;max-width:46ch}
+.rate{font-weight:500}.rate span{color:var(--star);letter-spacing:2px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.b{display:inline-flex;padding:14px 20px;border-radius:999px;font-weight:700;text-decoration:none}
+.b.p{background:var(--brand);color:var(--brand-ink)}.b.g{border:1.5px solid var(--line);color:var(--ink)}
+.b:focus-visible{outline:3px solid var(--star);outline-offset:2px}
+.ph{display:grid;grid-template-columns:2fr 1fr;grid-template-rows:1fr 1fr;gap:8px;height:clamp(220px,55vw,360px)}
+.ph div{border-radius:14px;display:flex;align-items:flex-end;padding:10px;color:#fff;font-size:.8rem;font-weight:700;min-width:0}
+.ph div:nth-child(1){grid-row:1/3;background:linear-gradient(150deg,#B0607F,#5E2440)}
+.ph div:nth-child(2){background:linear-gradient(150deg,#D4A3B4,#8C5A6C)}
+.ph div:nth-child(3){background:linear-gradient(150deg,#7E4A60,#3F1F2E)}
+section{padding-block:40px}
+h2{font-size:clamp(1.9rem,7vw,2.5rem);margin-bottom:20px}
+.menu{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px 18px}
+.menu h3{font-family:var(--body);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin:16px 0 4px}
+.row{display:flex;align-items:baseline;gap:8px;padding:8px 0}
+.row span:first-child{flex:none}
+.row i{flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px)}
+.row b{font-variant-numeric:tabular-nums}
+.rv{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.rv figure{margin:0;background:var(--soft);border-radius:14px;padding:18px}
+.rv .s{color:var(--star);letter-spacing:2px}
+.rv figcaption{color:var(--muted);font-size:.85rem;margin-top:6px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:24px}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+td{padding:8px 0;border-bottom:1px solid var(--line)}td:last-child{text-align:right}
+.closed{color:var(--muted)}
+a.map{color:var(--brand);font-weight:700}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.85rem}
+footer a{color:var(--brand)}
+.bar{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;gap:10px;z-index:5}
+.bar a{flex:1;text-align:center;padding:13px;border-radius:999px;font-weight:700;text-decoration:none}
+.bar .wa{background:var(--brand);color:var(--brand-ink)}.bar .c{border:1.5px solid var(--line);color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="demo">Exemple de site réalisé par <a href="/">Atelier Calibre</a> · salon fictif · les boutons de contact vous mènent à Atelier Calibre</div>
+<header class="hero"><div class="in">
+  <small>Coiffure femme, homme, enfant · Bourg-en-Bresse</small>
+  <h1>Salon <em>Lina</em></h1>
+  <p>Coupe, couleur et soins dans un salon calme, sur rendez-vous ou sans attendre le mardi matin.</p>
+  <p class="rate"><span>★★★★★</span> Ici, votre note Google</p>
+  <div class="btns"><a class="b p" href="https://wa.me/33698711848?text=Bonjour%2C%20j%27ai%20vu%20l%27exemple%20Salon%20Lina%2C%20je%20voudrais%20le%20m%C3%AAme%20site" target="_blank" rel="noopener">Je veux ce site</a><a class="b g" href="#prix">Voir les prix</a></div>
+</div></header>
+<main>
+<div class="in"><div class="ph" aria-hidden="true"><div>Balayage</div><div>Coupe homme</div><div>Le salon</div></div></div>
+<section id="prix"><div class="in">
+  <h2>Prestations et prix</h2>
+  <div class="menu">
+    <h3>Femme</h3>
+    <div class="row"><span>Shampoing, coupe, brushing</span><i></i><b>35 €</b></div>
+    <div class="row"><span>Couleur racines</span><i></i><b>42 €</b></div>
+    <div class="row"><span>Balayage</span><i></i><b>dès 65 €</b></div>
+    <h3>Homme</h3>
+    <div class="row"><span>Coupe</span><i></i><b>20 €</b></div>
+    <div class="row"><span>Coupe et barbe</span><i></i><b>28 €</b></div>
+    <h3>Enfant</h3>
+    <div class="row"><span>Moins de 12 ans</span><i></i><b>14 €</b></div>
+  </div>
+</div></section>
+<section><div class="in">
+  <h2>Ce que disent nos clientes</h2>
+  <div class="rv">
+    <figure><span class="s">★★★★★</span><p>Enfin une coiffeuse qui écoute. Le balayage est exactement ce que je voulais.</p><figcaption>Avis de démonstration</figcaption></figure>
+    <figure><span class="s">★★★★★</span><p>Accueil adorable, mon fils de 6 ans est ressorti ravi.</p><figcaption>Avis de démonstration</figcaption></figure>
+  </div>
+</div></section>
+<section><div class="in info">
+  <div><h2>Horaires</h2>
+    <table><tr class="closed"><td>Lundi</td><td>Fermé</td></tr><tr><td>Mardi au vendredi</td><td>9 h – 19 h</td></tr><tr><td>Samedi</td><td>8 h 30 – 17 h</td></tr><tr class="closed"><td>Dimanche</td><td>Fermé</td></tr></table></div>
+  <div><h2>Venir au salon</h2>
+    <p>Centre-ville de Bourg-en-Bresse, stationnement gratuit à 2 minutes.</p>
+    <p style="margin-top:12px"><a class="map" href="https://www.google.com/maps/search/Bourg-en-Bresse" target="_blank" rel="noopener">Itinéraire dans Google Maps →</a></p></div>
+</div></section>
+</main>
+<footer><div class="in">Salon Lina · salon fictif · Site réalisé par <a href="/">Atelier Calibre</a></div></footer>
+<nav class="bar" aria-label="Contact rapide"><a class="wa" href="https://wa.me/33698711848?text=Bonjour%2C%20j%27ai%20vu%20l%27exemple%20Salon%20Lina%2C%20je%20voudrais%20le%20m%C3%AAme%20site" target="_blank" rel="noopener">Je veux ce site</a><a class="c" href="/">Voir le tarif</a></nav>
+</body>
+</html>
