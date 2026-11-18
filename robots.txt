@@ -3,3 +3,4 @@ Allow: /
 Disallow: /demos/
 Disallow: /maquettes/
 Sitemap: https://sahaliprof-dev.github.io/sitemap.xml
+Disallow: /assets/social/
